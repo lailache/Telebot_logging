@@ -5,7 +5,7 @@ import sys
 
 logging.config.fileConfig("logging_config.ini")
 logger = logging.getLogger("my_bot")
-bot = telebot.TeleBot('6994718612:AAH29V0nCwYApINE89YQ52TWZm_3rqTtka8')
+bot = telebot.TeleBot('Token')
 
 
 class TelegramLogHandler(logging.Handler):
