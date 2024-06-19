@@ -80,7 +80,7 @@ def get_imt(message):
         bot.send_message(message.from_user.id, f'Твой ИМТ: {imt}. Продвинутое ожирение')
 
     keyboard = types.InlineKeyboardMarkup()
-    key_yes = types.InlineKeyboardButton(text='Да', callback_data='yes')  # кнопка «Да»
+    key_yes = types.InlineKeyboardButton(text='Да', callback_data='yes')  
     keyboard.add(key_yes)
     key_no = types.InlineKeyboardButton(text='Нет', callback_data='no')
     keyboard.add(key_no)
@@ -90,7 +90,7 @@ def get_imt(message):
 
 @bot.callback_query_handler(func=lambda call: True)
 def callback_worker(call):
-    if call.data == "yes":  # call.data это callback_data, которую мы указали при объявлении кнопки
+    if call.data == "yes":  
         bot.send_message(call.message.chat.id, 'Спасибо, мы рады : )')
     elif call.data == "no":
         bot.send_message(call.message.chat.id, 'Ну и ладно : )')
@@ -100,4 +100,4 @@ bot.polling(none_stop=True, interval=0)
 
 
 logger.addHandler(TelegramLogHandler('YOUR_BOT_TOKEN', 'YOUR_CHAT_ID'))
-logger.addFilter(FunctionBasedFilter('get_weight'))  # Exclude 'get_weight' 
+logger.addFilter(FunctionBasedFilter('get_weight'))  
