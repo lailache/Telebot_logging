@@ -11,3 +11,9 @@ Activation for **windows**:
 ```bash
 venv/scripts/activate
 ```
+
+### install libraries
+
+```bash
+pip install -r requirements.txt
+```
